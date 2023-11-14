@@ -24,17 +24,17 @@ jobs:
           source: "bin/*, nginx/*, backend/*, frontend/*, admin/*, docker-compose.yml, build-apps.sh, ecosystem.config.js, dump.sql"
           target: "/var/www/trade-study/public_html"
       - name: Reload Docker
-        uses: appleboy/scp-action@v0.1.4
+        uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: |
-            cd
-            cd /var/www/trade-study/public_html/
-            chmod ugo+x build-apps.sh
-            ./build-apps.sh
-            docker-compose -f docker-compose.yml down
-            docker-compose -f docker-compose.yml up -d
+        script: |
+          cd /
+          cd /var/www/trade-study/public_html/
+          chmod ugo+x build-apps.sh
+          ./build-apps.sh
+          docker-compose -f docker-compose.yml down
+          docker-compose -f docker-compose.yml up -d
 
