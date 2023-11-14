@@ -38,7 +38,6 @@ export default {
     { src: '~/plugins/observe-visibility.js', mode: 'client' },
     { src: '~/plugins/view-height.js', mode: 'client' },
     { src: '~/plugins/click-outside.js', mode: 'client' },
-    { src: '~/plugins/swiper.js', mode: 'client' }
     // { src: '~/plugins/loader.js', mode: 'client' }
   ],
 
