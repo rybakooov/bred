@@ -1,0 +1,43 @@
+@import './root';
+@import './normalize';
+@import './fonts';
+@import './svgicon';
+@import './transitions';
+
+html {
+  font-family: var(--root-font-family-text);
+  font-weight: 400;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--root-font-size);
+  background-color: var(--root-color-base-100);
+  color: var(--root-color-base-1000);
+}
+
+html, body {
+  //min-height: vh(100);
+}
+
+a {
+  text-decoration: none;
+}
+#frame {
+  .tradingview-widget-container {
+    max-height: 44.8em;
+    height: 44.8em;
+    @include down(md) {
+      max-height: 35.8em;
+      height: 35.8em;
+    }
+    iframe {
+      max-height: 44.8em;
+      height: 44.8em;
+      @include down(md) {
+        max-height: 35.8em;
+        height: 35.8em;
+      }
+    }
+  }
+}

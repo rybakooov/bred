@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Ubuntu:wght@500&display=swap');
+
+@font-face {
+  font-family: 'Gilroy';
+  src:  url('../fonts/Gilroy/gilroy-bold.woff2') format('woff2'),
+        url('../fonts/Gilroy/gilroy-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SuisseIntl';
+  src:  url('../fonts/Suisse Intl/SuisseIntl-Bold.woff2') format('woff2'),
+        url('../fonts/Suisse Intl/SuisseIntl-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SuisseIntl';
+  src:  url('../fonts/Suisse Intl/SuisseIntl-Medium.woff2') format('woff2'),
+        url('../fonts/Suisse Intl/SuisseIntl-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SuisseIntl';
+  src:  url('../fonts/Suisse Intl/SuisseIntl-Book.woff2') format('woff2'),
+        url('../fonts/Suisse Intl/SuisseIntl-Book.woff') format('woff');
+  font-weight: 450;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SuisseIntl';
+  src:  url('../fonts/Suisse Intl/SuisseIntl-Regular.woff2') format('woff2'),
+        url('../fonts/Suisse Intl/SuisseIntl-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+//@font-face {
+//  font-family: "monumentExtended";
+//  src: url("../fonts/monumentExtended/MonumentExtended-Regular.woff2") format("woff2"),
+//  url("../fonts/monumentExtended/MonumentExtended-Regular.woff") format("woff");
+//  font-weight: normal;
+//  font-style: normal;
+//  font-display: swap;
+//}
+
+//@font-face {
+//  font-family: "monumentExtended";
+//  src: url("../fonts/monumentExtended/MonumentExtended-Ultrabold.woff2") format("woff2"),
+//  url("../fonts/monumentExtended/MonumentExtended-Ultrabold.woff") format("woff");
+//  font-weight: 400;
+//  font-style: normal;
+//  font-display: swap;
+//}

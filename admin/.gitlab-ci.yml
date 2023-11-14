@@ -1,0 +1,79 @@
+stages:
+  - configuration
+  - build
+  - stage_build
+  - deploy
+  - send artifacts
+
+nginx_configuration:
+  stage: configuration
+  script:
+    - sudo cp /etc/nginx/conf.d/_HOSTNAME_.stage.hzberg.com.conf_TEMPLATE_
+      /etc/nginx/conf.d/$CI_PROJECT_NAME.stage.hzberg.com.conf
+    - sudo sed -i "s/_HOSTNAME_/$CI_PROJECT_NAME/g"
+      /etc/nginx/conf.d/$CI_PROJECT_NAME.stage.hzberg.com.conf
+    - sudo certbot --non-interactive --agree-tos --nginx
+      -d "$CI_PROJECT_NAME.stage.hzberg.com"
+  only:
+    - stage
+  tags:
+    - shell
+
+build:
+  stage: build
+  image: node:12
+  services:
+    - docker:dind
+  script:
+    - npm install
+    - npm run generate
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/dist
+    expire_in: 1 month
+  only:
+    - master
+  tags:
+    - docker
+
+stage_build:
+  stage: stage_build
+  image: node:12
+  services:
+    - docker:dind
+  script:
+    - npm install
+    - npm run generate:stage
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/dist
+    expire_in: 1 month
+  only:
+    - stage
+  tags:
+    - docker
+
+deploy_to_prod:
+  stage: deploy
+  script:
+    - mkdir -p /srv/frontend/$CI_PROJECT_NAME
+    - rsync -avh --delete
+      --exclude=".*"
+      --exclude='README.md'
+      ./dist/
+      /srv/frontend/$CI_PROJECT_NAME/
+  only:
+    - stage
+  tags:
+    - shell
+
+send_artifacts:
+  stage: send artifacts
+  image: node:12
+  script:
+    - tar -czf $CI_PROJECT_NAME-$CI_PIPELINE_ID-artifact.tar.gz -C $CI_PROJECT_DIR dist
+    - bash send_artifacts.sh $CI_PROJECT_NAME-$CI_PIPELINE_ID-artifact.tar.gz
+  only:
+    - master
+  tags:
+    - docker

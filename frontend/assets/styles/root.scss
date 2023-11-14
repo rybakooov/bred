@@ -1,0 +1,70 @@
+  :root {
+  /*
+   * Sizes
+   */
+  --vh: 1vh;
+  --root-font-size: 0.69444444vw;
+  --root-layout-offset: 5.6em;
+  --root-header-height: 5.2em;
+  --root-footer-height: 5em;
+  --root-main-header-height: 9em;
+  --root-main-footer-height: 5em;
+  /*
+   * Colors
+   */
+  --root-color-base-0: #FFFFFF;
+  --root-color-base-50: #FBFAFA;
+  --root-color-base-100: #F8F8F8;
+  --root-color-base-200: #EBEBEB;
+  --root-color-base-300: #D7D7D7;
+  --root-color-base-400: #C3C3C3;
+  --root-color-base-500: #ACACAC;
+  --root-color-base-600: #777777;
+  --root-color-base-700: #505050;
+  --root-color-base-800: #3C3C3C;
+  --root-color-base-900: #282828;
+  --root-color-base-1000: #000000;
+
+  --root-color-green: #27AE60;
+
+  --root-color-blue-100: #E1E6FF;
+  --root-color-blue-300: #A4B5FF;
+  --root-color-blue-400: #859DFF;
+  --root-color-blue-500: #6784FF;
+
+  --root-color-red: #EB5757;
+  --root-color-red-400: #FFA181;
+  --root-color-red-500: #FF8A62;
+  --root-color-red-550: #FF8359;
+  /*
+   * Fonts
+   */
+
+  --root-font-family-logo: 'Gilroy', sans-serif;
+  --root-font-family-header: 'Ubuntu', sans-serif;
+  --root-font-family-text: 'PT Sans', sans-serif;
+
+  @include up(FullHD) {
+    --root-font-size: 0.69444444vw;
+  }
+
+  @include down(xxl) {
+    --root-font-size: 10px;
+  }
+
+  @include down(lg) {
+    --root-font-size: 1.30208333vw;
+    --root-layout-offset: 2.4em;
+  }
+
+  @include down(md) {
+    --root-font-size: 10px;
+    --root-layout-offset: 1.2em;
+    --root-main-header-height: 8.1em;
+  }
+
+  @include down(sm) {
+    --root-font-size: 2.777777vw;
+  }
+}
+

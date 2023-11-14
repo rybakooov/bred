@@ -1,0 +1,69 @@
+version: '3'
+volumes:
+    data:
+services:
+    db:
+        image: postgres:10.13
+        environment:
+            POSTGRES_USER: django
+            POSTGRES_PASSWORD: django
+        volumes:
+            - data:/var/lib/postgresql/data
+        ports:
+            - "9432:5432"
+    django:
+        image: django
+        container_name: django
+        restart: always
+        build: ./backend
+        volumes:
+            - ./backend:/app
+        command: ./bin/develop.sh
+        ports:
+            - "8000:8000"
+        environment:
+            DB_ENGINE: django.db.backends.postgresql
+            DB_NAME: django
+            DB_USER: django
+            DB_PASSWORD: django
+            DB_HOST: db
+            DB_PORT: 5432
+
+        depends_on:
+            - db
+    nginx:
+        build:
+            context: ./
+            dockerfile: ./nginx/Dockerfile
+        depends_on:
+            - django
+        ports:
+            - "9000:80"
+        volumes:
+            - "./backend/media:/media"
+            - "./logs/nginx:/tmp/logs"
+        restart: always
+#    frontend:
+#        image: frontend
+#        container_name: frontend
+#        restart: always
+#        build:
+#            context: ./frontend
+#        ports:
+#            - "3000:3000"
+#        volumes:
+#            - ./frontend:/frontend
+#            - /frontend/node_modules
+#        command: npm run serve
+#    admin:
+#        image: admin
+#        container_name: admin
+#        restart: always
+#        build:
+#            context: ./admin
+#        ports:
+#            - "3001:3001"
+#        volumes:
+#            - ./admin:/admin
+#            - ./admin/node_modules
+#        command: npm run serve
