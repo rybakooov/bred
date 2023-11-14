@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  import pageMixin from '../mixins/page'
-  import aos from '../mixins/aos'
-  import SectionMain from '~/components/sections/main'
+  import pageMixin from './mixins/page'
+  import aos from './mixins/aos'
+  import SectionMain from '~/components/sections/main/index.vue'
   import { mapActions } from 'vuex'
 
   export default {
