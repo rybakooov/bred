@@ -49,7 +49,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     '@nuxtjs/eslint-module',
-    './scroll/dist/nuxt.scroll.module.js'
+    '~/scroll/dist/nuxt.scroll.module.js'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
