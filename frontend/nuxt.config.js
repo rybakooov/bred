@@ -32,6 +32,7 @@ export default {
     { src: '~/plugins/video.js' },
     { src: '~/plugins/time/index.js' },
     { src: '~/plugins/time/sync.js', mode: 'client' },
+    { src: '~/plugins/scroll/index.js', mode: 'client' },
     { src: '~/plugins/device.js', mode: 'client' },
     { src: '~/plugins/router.js', mode: 'client' },
     { src: '~/plugins/raf.js', mode: 'client' },
@@ -48,8 +49,7 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/eslint-module',
-    '~/scroll'
+    '@nuxtjs/eslint-module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)

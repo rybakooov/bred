@@ -32,6 +32,7 @@ export default {
     // { src: '~/plugins/api.js' },
     { src: '~/plugins/filters.js' },
     { src: '~/plugins/device.js', mode: 'client' },
+    { src: '~/plugins/scroll/index.js', mode: 'client' },
     { src: '~/plugins/router.js', mode: 'client' },
     { src: '~/plugins/raf.js', mode: 'client' },
     { src: '~/plugins/observe-visibility.js', mode: 'client' },
@@ -46,8 +47,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
-    'scroll'
+    '@nuxtjs/vuetify'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)

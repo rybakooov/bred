@@ -7,7 +7,6 @@
   import pageMixin from '../../../../mixins/page'
   import SectionTest from '~/components/sections/test'
   import { mapActions, mapState } from 'vuex'
-  import logo from '~/components/icons/logo'
   import SectionTestResults from '~/components/sections/test/results'
 
   export default {
@@ -42,13 +41,10 @@
             subjectId: this.$route.params.theme,
             lessonId: this.$route.params.lesson,
             results
-          }).catch((e) => {
-            console.log(e.response)
-          })
+          }).catch(() => {})
           this.success = res.success
           this.results = results
         } catch (e) {
-          console.log(e.message)
           if (res.success) {
             this.success = res.success
             this.results = results

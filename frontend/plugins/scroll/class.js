@@ -142,7 +142,7 @@ export class Scroll {
   }
 
   resize () {}
-  
+
   /**
    * Lock scroll
    * @param value {Boolean} - lock value
@@ -152,21 +152,21 @@ export class Scroll {
    */
   lock (value, scrollContainer, options = {}) {
     if (!(scrollContainer instanceof HTMLElement)) {
-      throw new Error('scrollContainer argument required')
+      throw new TypeError('scrollContainer argument required')
     }
     const activeScrollLock = this.locks.find(item => item.active)
-  
+
     if (activeScrollLock) {
       enableBodyScroll(activeScrollLock.scrollContainer)
       activeScrollLock.active = false
     }
-  
+
     if (value) {
       this.locks.push({ scrollContainer, options, active: true })
       disableBodyScroll(scrollContainer, options)
     } else {
       const scrollLockIndex = this.locks.findIndex(item => item.scrollContainer === scrollContainer)
-      
+
       if (scrollLockIndex > -1) {
         this.locks.splice(scrollLockIndex, 1)
       }
@@ -180,7 +180,7 @@ export class Scroll {
     }
     return this
   }
-  
+
   /**
    * Animate scroll
    * @param x {Number}
@@ -208,7 +208,7 @@ export class Scroll {
     if (!EASINGS.includes(easing)) {
       throw new Error(`Incorrect variable 'easing' value. Available:[${EASINGS.join(',')}]`)
     }
-    
+
     return new Promise((resolve) => {
       if (element instanceof HTMLElement) {
         y = element.getBoundingClientRect().top + element.ownerDocument.defaultView.pageYOffset
@@ -273,7 +273,7 @@ export class Scroll {
   isSafari () {
     return /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
   }
-  
+
   static easeInOutQuad (t, b, c, d) {
     t /= d / 2
     if (t < 1) {
@@ -282,14 +282,14 @@ export class Scroll {
     t--
     return -c / 2 * (t * (t - 2) - 1) + b
   }
-  
+
   static easeInCubic (t, b, c, d) {
-    const tc = (t/=d) * t * t
+    const tc = (t /= d) * t * t
     return b + c * (tc)
   }
-  
+
   static inOutQuintic (t, b, c, d) {
-    const ts = (t/=d) * t
+    const ts = (t /= d) * t
     const tc = ts * t
     return b + c * (6 * tc * ts + -15 * ts * ts + 10 * tc)
   }
