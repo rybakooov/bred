@@ -1,33 +1,30 @@
 <template>
-  <section-main :class="$style.main"/>
+  <section-auth />
 </template>
 
 <script>
-  import pageMixin from '../mixins/page'
-  import aos from '../mixins/aos'
-  import SectionMain from '~/components/sections/main'
-  import { mapActions } from 'vuex'
+import pageMixin from '../mixins/page'
+import SectionAuth from '~/components/sections/auth'
 
-  export default {
-    auth: false,
-    components: {
-      SectionMain
-    },
-    layout: 'landing',
-    name: 'MainPage',
-    mixins: [
-      pageMixin(),
-      aos()
-    ],
-    computed: {
-      title() {
-        return 'Добро пожаловать!'
-      }
+export default {
+  auth: false,
+  components: {
+    SectionAuth
+  },
+  layout: 'default',
+  name: 'AuthPage',
+  mixins: [
+    pageMixin()
+  ],
+  computed: {
+    title() {
+      return 'Авторизация'
     }
+  },
+  async asyncData ({ app, error }) {
+    await Promise.all([])
+    // error({ statusCode: 404 })
+  },
+  mounted () {}
 }
 </script>
-
-<style lang="scss" module>
-  .main {
-  }
-</style>
