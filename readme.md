@@ -13,7 +13,6 @@ Rebuild
     docker-compose -f docker-compose.yml up
 
 
-
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
