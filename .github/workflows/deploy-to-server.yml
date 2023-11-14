@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  Deploy-To-Server:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: Copy files
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -24,7 +24,7 @@ jobs:
           source: "bin/*, nginx/*, backend/*, frontend/*, admin/*, docker-compose.yml, build-apps.sh, ecosystem.config.js, dump.sql"
           target: "/var/www/trade-study/public_html"
       - name: Reload Docker
-        uses: appleboy/ssh-action@master
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
