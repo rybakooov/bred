@@ -208,5 +208,6 @@ CORS_ALLOWED_ORIGINS = (
     'http://localhost:1000',
     'http://localhost:8080',
     'https://trade-study.ru',
+    'https://pl.trade-study.ru',
     'https://admin.trade-study.ru'
 )
