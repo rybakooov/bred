@@ -105,7 +105,7 @@
   }
   .logout {
     margin-left: auto;
-    color: var(--root-color-red);
+    color: var(--root-color-blue);
     @include down(md) {
       display: none;
     }
@@ -120,7 +120,7 @@
       margin-right: 0.8em;
     }
     .t {
-      color: var(--root-color-red);
+      color: var(--root-color-blue);
       font-size: 1.6em;
       line-height: 1.12;
     }

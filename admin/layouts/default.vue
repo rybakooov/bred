@@ -36,7 +36,7 @@
       fixed
       :class="$style.footer"
     >
-      <span>&copy; StartTheHistory {{ new Date().getFullYear() }}</span>
+      <span>&copy; Go Trade {{ new Date().getFullYear() }}</span>
     </v-footer>
 
     <containers-notification />

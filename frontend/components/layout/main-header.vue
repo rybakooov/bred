@@ -11,7 +11,7 @@
             <span :class="$style.text">{{ item.title }}</span>
           </ui-button>
         </div>
-        <ui-button href="https://t.me/sthtrade" :class="$style.btn">
+        <ui-button href="https://t.me//gotradehelp" :class="$style.btn">
           <div :class="$style.button">
             <span :class="$style.text">{{ button }}</span>
             <icon-telegram :class="$style.icon"/>
@@ -49,7 +49,7 @@
     data() {
       return {
         isMenuOpen: false,
-        logo: 'start <span>the</span> history',
+        logo: 'Go<span>Trade</span>',
         nav: [
           { title: 'Что внутри', id: 'inside' },
           { title: 'Чему научитесь', id: 'learn' },

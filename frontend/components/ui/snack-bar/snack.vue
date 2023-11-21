@@ -104,7 +104,7 @@
   flex-wrap: nowrap;
   opacity: 1;
   text-align: left;
-  --root-color-error: var(--root-color-red-500);
+  --root-color-error: var(--root-color-blue-500);
   --root-color-accent: var(--root-color-blue-500);
   --root-color-invert: white;
   --root-color-block-bg: white;

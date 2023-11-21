@@ -131,7 +131,7 @@ import { mapActions, mapState } from 'vuex'
       },
       async onClick() {
         if (!this.success) {
-          await this.$router.go()
+          await this.$router.go('/profile')
         }
         if (this.lessonId) { // если урок, чекаем есть ли следующий. Если нет шлем на итоговый
           try {

@@ -110,7 +110,7 @@ export default {
         bots: [
           {
             image: require('@/assets/images/bots/bot-1.svg'),
-            title: "Скринер",
+            title: "Выбор готового портфеля",
             message: "По вашему запросу выдаёт всю информацию по компании"
           },
           {

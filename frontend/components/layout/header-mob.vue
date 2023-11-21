@@ -11,7 +11,7 @@
         <icon-logo :class="$style.icon" />
       </template>
       <span :class="$style.t">
-        Start<span>The</span>History
+        Go<span>Trade</span>
       </span>
     </ui-button>
     <ui-burger v-if="!onMain && $auth.loggedIn" :class="$style.burger" v-model="menuOpen"/>
@@ -63,14 +63,14 @@
           title: 'Курс',
           to: '/profile'
         }, {
-          title: 'Аналитика',
-          to: '/screener'
+          title: 'Выбор готового портфеля',
+          href: ''
         }, {
           title: 'Telegram',
-          href: 'https://t.me/sthtrade'
+          href: 'https://t.me//gotradehelp'
         }, {
           title: 'Канал',
-          href: 'https://t.me/+3ZO3yVVBGalhNjY6'
+          href: 'https://t.me/+bMJN5S5ADrNiNzUy'
         }]
       }
     },

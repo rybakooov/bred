@@ -23,7 +23,7 @@
         <p :class="$style.write"><span :class="$style.text">Пишите на почту</span></p>
         <ui-button :class="$style.email" href="mailto: friends@sth-edu.ru"><span :class="$style.text">friends@sth-edu.ru</span></ui-button>
       </div>
-      <ui-button href="https://t.me/sthtrade">
+      <ui-button href="https://t.me//gotradehelp">
         <div :class="$style.button">
           <span :class="$style.text">Написать в телеграм</span>
           <icon-arrow-control :class="$style.icon" fill="#E47138" color="#F4F4F4" />

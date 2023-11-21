@@ -9,7 +9,7 @@
     <ui-button :class="$style.bots" theme="red" size="md" href="https://t.me/ema_macd_bot"><span :class="$style.text">EMA MACD</span></ui-button>
     <h2 :class="$style.title">
       <span :class="$style.t">
-        Скринер
+        Выбор готового портфеля
       </span>
     </h2>
     <screener-search :class="$style.search" @input="inputAction" />

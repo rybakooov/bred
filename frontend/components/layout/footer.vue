@@ -1,7 +1,7 @@
 <template>
   <footer :class="$style.container">
     <p :class="$style.copyright">
-      <span :class="$style.t">© StartTheHistory, 2021</span>
+      <span :class="$style.t">© GoTrade, 2023</span>
     </p>
     <p :class="$style.rybacode">
       <span :class="$style.t">

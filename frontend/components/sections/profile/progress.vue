@@ -3,7 +3,7 @@
     <div :class="$style.progress">
       <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="75" cy="75" r="70" stroke="#EBEBEB" stroke-width="10"/>
-        <path ref="circle" :style="{ 'stroke-dasharray': dasharray, 'stroke-dashoffset': dashoffset }" d="M75 5C93.5464 5 111.335 12.3602 124.459 25.4644C137.584 38.5686 144.971 56.3456 145 74.892C145.029 93.4384 137.696 111.238 124.612 124.383C111.528 137.527 93.7624 144.942 75.216 145C56.6696 145.057 38.8586 137.752 25.6938 124.688C12.529 111.624 5.08659 93.8702 5.00075 75.324C4.91491 56.7778 12.1927 38.9555 25.236 25.7705C38.2793 12.5856 56.0219 5.11579 74.568 5.00133" stroke="#FF8A62" stroke-width="10" stroke-linecap="round"/>
+        <path ref="circle" :style="{ 'stroke-dasharray': dasharray, 'stroke-dashoffset': dashoffset }" d="M75 5C93.5464 5 111.335 12.3602 124.459 25.4644C137.584 38.5686 144.971 56.3456 145 74.892C145.029 93.4384 137.696 111.238 124.612 124.383C111.528 137.527 93.7624 144.942 75.216 145C56.6696 145.057 38.8586 137.752 25.6938 124.688C12.529 111.624 5.08659 93.8702 5.00075 75.324C4.91491 56.7778 12.1927 38.9555 25.236 25.7705C38.2793 12.5856 56.0219 5.11579 74.568 5.00133" stroke="#5575ff" stroke-width="10" stroke-linecap="round"/>
       </svg>
       <div :class="$style.wrap">
         <span :class="$style.t">

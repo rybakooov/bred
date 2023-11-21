@@ -17,7 +17,7 @@
     ],
     computed: {
       title() {
-        return 'Аналитика'
+        return 'ВЫБОР ГОТОВОГО ПОРТФЕЛЯ'
       }
     },
     async asyncData ({ app, error }) {

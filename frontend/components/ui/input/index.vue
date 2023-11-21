@@ -6,7 +6,7 @@
     <slot name="before"></slot>
     <span :class="$style.value">
       <textarea v-if="multiline" :placeholder="placeholder" :value="value" ref="input" :class="$style.textarea" :rows="1" @keyup.enter="onKeyEnter" @input="onInput" @focus="onFocus" @blur="onBlur"></textarea>
-      <input :type="passState" v-else :value="value" :placeholder="placeholder" ref="input" @keyup.enter="onSubmit" :class="$style.input" @input="onInput" @focus="onFocus" @blur="onBlur">
+      <input v-bind="$attrs" :type="passState" v-else :value="value" :placeholder="placeholder" ref="input" @keyup.enter="onSubmit" :class="$style.input" @input="onInput" @focus="onFocus" @blur="onBlur">
     </span>
     <div :class="$style.passwordEye" v-if="password" @click="passState === 'text' ? passState = 'password' : passState = 'text'">
       <icon-opened-eye :class="$style.opened" v-if="passState === 'text'" />
@@ -148,7 +148,7 @@
     transition: .3s;
     justify-content: center;
     &.errored {
-      border-color: var(--root-color-red);
+      border-color: var(--root-color-blue);
     }
   }
   .input,

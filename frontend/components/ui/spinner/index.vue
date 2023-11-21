@@ -43,9 +43,9 @@ export default {
 }
 
 .spinner {
-  border-top: 0.2em solid var(--root-color-red);
-  border-right: 0.2em solid var(--root-color-red);
-  border-bottom: 0.2em solid var(--root-color-red);
+  border-top: 0.2em solid var(--root-color-blue);
+  border-right: 0.2em solid var(--root-color-blue);
+  border-bottom: 0.2em solid var(--root-color-blue);
 }
 
 @keyframes spinner {

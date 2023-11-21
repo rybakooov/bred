@@ -118,7 +118,7 @@
    * Themes
    */
   .red {
-    background-color: var(--root-color-red-500);
+    background-color: var(--root-color-blue-500);
     color: var(--root-color-base-0);
     font-family: var(--root-font-family-header);
     font-weight: 500;
@@ -127,10 +127,10 @@
       background-color: var(--root-color-base-200);
     }
     &:hover {
-      background-color: var(--root-color-red-400);
+      background-color: var(--root-color-blue-400);
     }
     &:active {
-      background-color: var(--root-color-red-550);
+      background-color: var(--root-color-blue-550);
     }
   }
 

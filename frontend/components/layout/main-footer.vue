@@ -1,6 +1,6 @@
 <template>
   <footer :class="$style.footer">
-    <div :class="$style.left"><span :class="$style.text">© StartTheHistory, 2021</span></div>
+    <div :class="$style.left"><span :class="$style.text">© GoTrade, 2023</span></div>
     <div :class="$style.right"><span :class="$style.text">Сайт сделан в <ui-button href="https://rybacode.com/" :class="$style.link">RybaCode</ui-button></span></div>
   </footer>
 </template>

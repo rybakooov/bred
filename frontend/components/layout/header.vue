@@ -5,7 +5,7 @@
         <icon-logo :class="$style.icon" />
       </template>
       <span :class="$style.t">
-        Start<span>The</span>History
+        Go<span>Trade</span>
       </span>
     </ui-button>
 
@@ -68,14 +68,14 @@
           title: 'Курс',
           to: '/profile'
         }, {
-          title: 'Аналитика',
-          to: '/screener'
+          title: 'Выбор готового портфеля',
+          href: ''
         }, {
           title: 'Telegram',
-          href: 'https://t.me/sthtrade'
+          href: 'https://t.me//gotradehelp'
         }, {
           title: 'Канал',
-          href: 'https://t.me/+3ZO3yVVBGalhNjY6'
+          href: 'https://t.me/+bMJN5S5ADrNiNzUy'
         }],
         isProfileOpen: false
       }
@@ -206,14 +206,14 @@
       margin: 0 0.4em 0 0.8em;
       display: block;
       &.top {
-        color: var(--root-color-red);
+        color: var(--root-color-blue);
         transform: rotate(180deg);
       }
     }
     .change {
       color: var(--root-color-green);
       &.top {
-        color: var(--root-color-red);
+        color: var(--root-color-blue);
       }
       .t {
         font-size: 1.4em;
@@ -327,7 +327,7 @@
     }
   }
   .exit {
-    color: var(--root-color-red);
+    color: var(--root-color-blue);
     & > span {
       display: flex;
       align-items: center;

@@ -221,8 +221,8 @@
     input {
       display: none;
       &:checked + .mark {
-        background-color: var(--root-color-red-500);
-        border-color: var(--root-color-red-500);
+        background-color: var(--root-color-blue-500);
+        border-color: var(--root-color-blue-500);
       }
     }
     .text {

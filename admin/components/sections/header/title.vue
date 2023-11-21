@@ -2,7 +2,7 @@
   <div :class="$style.container">
     <icon-stat :class="$style.icon"/>
     <div :class="$style.title">
-      Start<span :class="$style.colored">The</span>History
+      Go<span :class="$style.colored">Trade</span>
     </div>
   </div>
 </template>

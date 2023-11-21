@@ -98,7 +98,7 @@
     align-items: center;
     margin-bottom: 1em;
     .icon {
-      color: var(--root-color-red-500);
+      color: var(--root-color-blue-500);
       margin-right: 1em;
     }
     .t {
