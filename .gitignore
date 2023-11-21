@@ -98,3 +98,5 @@ backend/pipcache/*
 backend/media/*
 backend/db.sqlite3
 frontend/node_modules
+
+venv/
