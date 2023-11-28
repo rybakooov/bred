@@ -64,7 +64,7 @@
           to: '/profile'
         }, {
           title: 'Выбор готового портфеля',
-          href: ''
+          href: 'https://t.me//BeWhale_bot'
         }, {
           title: 'Telegram',
           href: 'https://t.me//gotradehelp'
