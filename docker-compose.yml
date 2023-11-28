@@ -11,6 +11,11 @@ services:
             - data:/var/lib/postgresql/data
         ports:
             - "9432:5432"
+    memcached:
+        image: memcached
+        container_name: memcached
+        ports:
+            - "11212:11211"
     django:
         image: django
         container_name: django
@@ -28,10 +33,13 @@ services:
             DB_PASSWORD: django
             DB_HOST: db
             DB_PORT: 5432
+            MEMCACHED_HOST: memcached
+            MEMCACHED_PORT: 11211
             DEBUG: 0
 
         depends_on:
             - db
+            - memcached
 #    nginx:
 #        build:
 #            context: ./

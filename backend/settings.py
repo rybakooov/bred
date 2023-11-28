@@ -185,7 +185,14 @@ PASSWORD_TOKEN_EXPIRATION_PERIOD = 12  # In hours
 REST_API_ID = 'fedeb01631f0de2e626dde76784fa4a2'
 REST_API_SECRET = 'f1fe14518bdd321e1a0ef550caf40831'
 TOKEN_STORAGE = 'memcached'
-MEMCACHED_HOST = '127.0.0.1:11211'
+MEMCACHED_HOST = f'{os.getenv("MEMCACHED_HOST", "localhost")}:{os.getenv("MEMCACHED_PORT", "11212")}'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyMemcacheCache',
+        'LOCATION': MEMCACHED_HOST,
+    }
+}
 
 CLOUDPAYMENTS_PRODUCT_ID = 'pk_e8e9e565410fa33e3bb57783172b8'
 CLOUDPAYMENTS_API_SECRET = 'd5c12e462a09d68709d560ae9808fd98'
@@ -211,3 +218,34 @@ CORS_ALLOWED_ORIGINS = (
     'https://pl.trade-study.ru',
     'https://admin.trade-study.ru'
 )
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            "format": '%(name)s | %(levelname)s %(asctime)s | %(message)s',
+        },
+        'file': {
+            'format': '%(name)s | %(levelname)s %(asctime)s | %(message)s',
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'debug.log',
+        }
+    },
+    'loggers': {
+        '': {
+            'level': 'INFO',
+            'handlers': ['console', 'file']
+        }
+    }
+}

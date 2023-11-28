@@ -1,5 +1,19 @@
 from rest_framework import serializers
 
+FORBES = "forbes"
+WSJ = "wsj"
+VEDOMOSTI = "vedomosti"
+KOMMERSANT = "kommersant"
+MOS_KOM = "mk"
+
+URLS_MAPPING = {
+    FORBES: "www.forbes.com",
+    WSJ: "www.wsj.com",
+    VEDOMOSTI: "www.vedomosti.ru",
+    KOMMERSANT: "www.kommersant.ru",
+    MOS_KOM: "www.mk.ru",
+}
+
 
 class MovingAverageSerializer(serializers.Serializer):
     period = serializers.CharField(allow_null=True)
@@ -102,16 +116,24 @@ class BaseFeedSerializer(serializers.Serializer):
     source = serializers.SerializerMethodField()
     thumbnail = serializers.SerializerMethodField()
 
-    @staticmethod
-    def get_source(obj):
-        if 'www.forbes.com' in obj['link']:
-            return 'forbes'
-        else:
-            return 'wsj'
+    def get_source(self, obj):
+        link = obj["link"]
+
+        for source_name, source_url in URLS_MAPPING.items():
+            if source_url in link:
+                return source_name
+
+        return ""
 
     def get_thumbnail(self, obj):
         source = self.get_source(obj)
-        if source == 'forbes' and (media := obj.get('media_thumbnail')):
-            return serializers.URLField().to_representation(media[0]['url'])
-        else:
-            return None
+
+        if source == FORBES and (media := obj.get('media_thumbnail')):
+            return media[0]['url']
+
+        elif source in (VEDOMOSTI, KOMMERSANT, MOS_KOM):
+            for link in obj.get("links", []):
+                if link.get("rel") == "enclosure":
+                    return link["href"]
+
+        return None
