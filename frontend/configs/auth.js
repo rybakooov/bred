@@ -1,8 +1,8 @@
 export default {
   // redirect: false,
   redirect: {
-    login: '/auth',
-    logout: '/auth',
+    login: '/',
+    logout: '/',
     callback: '/profile',
     home: '/profile'
   },

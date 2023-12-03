@@ -102,7 +102,7 @@
         }
         this.$auth.logout()
         if (!this.$auth.loggedIn) {
-          this.$router.push('/auth')
+          this.$router.push('/')
         }
       },
       onClickOutside () {
