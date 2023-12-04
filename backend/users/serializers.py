@@ -27,7 +27,7 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(raw_password)
         user.save()
         Token.objects.create(user=user)
-        user.send_registration_email(name=user, raw_password)
+        user.send_registration_email(email=attrs['email'], raw_password)
 
         return user
 
