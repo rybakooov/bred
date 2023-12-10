@@ -89,7 +89,7 @@ class User(AbstractUser):
         send_email(
             'Добро пожаловать!',
             'users/registration_template.html',
-            {'name': self.get_name_or_email(), 'password': raw_password},
+            {'name': self.email, 'password': raw_password},
             'friends@sth-edu.ru',
             [self.email]
         )
