@@ -21,5 +21,3 @@ sudo ln -s /etc/nginx/sites-available/admin.trade-study.ru /etc/nginx/sites-enab
 sudo ln -s /etc/nginx/sites-available/admin.trade-study.ru /etc/nginx/sites-enabled/admin.trade-study.ru
 sudo ln -s /etc/nginx/sites-available/api.trade-study.ru /etc/nginx/sites-enabled/api.trade-study.ru
 sudo ln -s /etc/nginx/sites-available/pl.trade-study.ru /etc/nginx/sites-enabled/pl.trade-study.ru
-\
-
