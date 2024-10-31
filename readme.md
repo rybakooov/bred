@@ -16,8 +16,8 @@ sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
 sudo certbot --nginx
-sudo ln -s /etc/nginx/sites-available/admin.trade-study.ru /etc/nginx/sites-enabled/api.trade-study.ru /etc/nginx/sites-enabled/pl.trade-study.ru
 
+sudo ln -s /etc/nginx/sites-available/admin.trade-study.ru /etc/nginx/sites-enabled/api.trade-study.ru /etc/nginx/sites-enabled/pl.trade-study.ru
 sudo ln -s /etc/nginx/sites-available/admin.trade-study.ru /etc/nginx/sites-enabled/admin.trade-study.ru
 sudo ln -s /etc/nginx/sites-available/api.trade-study.ru /etc/nginx/sites-enabled/api.trade-study.ru
 sudo ln -s /etc/nginx/sites-available/pl.trade-study.ru /etc/nginx/sites-enabled/pl.trade-study.ru
